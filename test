@@ -1,0 +1,105 @@
+index.html <!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Психологический тест</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Как технологии влияют на вашу психологию?</h1>
+        <p>Пройдите тест и узнайте, насколько сильно цифровой мир воздействует на вас.</p>
+        <button onclick="startTest()">Начать тест</button>
+    </div>
+
+    <div id="test" class="hidden">
+        <form id="quizForm">
+            <div class="question">
+                <p>1. Как часто вы чувствуете тревожность, если долго не проверяете телефон?</p>
+                <label><input type="radio" name="q1" value="3"> Очень часто</label>
+                <label><input type="radio" name="q1" value="2"> Иногда</label>
+                <label><input type="radio" name="q1" value="1"> Редко</label>
+            </div>
+
+            <div class="question">
+                <p>2. Вы замечаете снижение концентрации из-за соцсетей?</p>
+                <label><input type="radio" name="q2" value="3"> Да</label>
+                <label><input type="radio" name="q2" value="2"> Иногда</label>
+                <label><input type="radio" name="q2" value="1"> Нет</label>
+            </div>
+
+            <button type="button" onclick="calculateResult()">Получить результат</button>
+        </form>
+    </div>
+
+    <div id="result" class="hidden">
+        <h2>Ваш результат:</h2>
+        <p id="resultText"></p>
+        <button onclick="restartTest()">Пройти снова</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+style.css body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 50px;
+    background-color: #f4f4f4;
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+
+.hidden {
+    display: none;
+}
+.question {
+    margin: 20px 0;
+}
+
+button {
+    background: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+script.js function startTest() {
+    document.querySelector(".container").style.display = "none";
+    document.getElementById("test").style.display = "block";
+}
+
+function calculateResult() {
+    let score = 0;
+    const answers = document.querySelectorAll("input[type='radio']:checked");
+
+    answers.forEach(answer => {
+        score += parseInt(answer.value);
+    });
+
+    let resultText = "";
+    if (score >= 5) {
+        resultText = "Технологии сильно влияют на вашу психологию. Постарайтесь ограничить экранное время.";
+    } else if (score >= 3) {
+        resultText = "Вы подвержены влиянию технологий, но держите баланс.";
+    } else {
+        resultText = "Вы контролируете использование технологий и не испытываете значительного воздействия.";
+    }
+
+    document.getElementById("test").style.display = "none";
+    document.getElementById("result").style.display = "block";
+    document.getElementById("resultText").textContent = resultText;
+}
+
+function restartTest() {
+    document.getElementById("result").style.display = "none";
+    document.querySelector(".container").style.display = "block";
+}
