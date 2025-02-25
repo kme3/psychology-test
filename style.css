@@ -1,11 +1,7 @@
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 50px;
-    background: linear-gradient(to right, #4facfe, #00f2fe);
-    color: white;
+    background-color: #f0f0f0; /* Светло-серый фон */
+    font-family: Arial, sans-serif; /* Шрифт */
 }
-
 /* Контейнер теста */
 .container {
     background: rgba(255, 255, 255, 0.9);
