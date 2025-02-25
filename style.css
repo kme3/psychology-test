@@ -2,30 +2,59 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
     margin: 50px;
-    background-color: #f4f4f4;
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    color: white;
 }
 
+/* Контейнер теста */
 .container {
-    background: white;
+    background: rgba(255, 255, 255, 0.9);
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
     display: inline-block;
+    width: 60%;
+    color: black;
 }
 
-.hidden {
-    display: none;
-}
-
-.question {
-    margin: 20px 0;
-}
-
+/* Кнопки */
 button {
-    background: #007BFF;
+    background: #ff6b6b;
     color: white;
     border: none;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 15px 20px;
+    font-size: 16px;
+    border-radius: 10px;
     cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ff4757;
+}
+
+/* Вопросы */
+.question {
+    background: white;
+    color: black;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px 0;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Результат */
+#result {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    width: 60%;
+    color: black;
+}
+
+/* Скрытый блок */
+.hidden {
+    display: none;
 }
