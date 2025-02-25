@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Психологический тест</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Как технологии влияют на вашу психологию?</h1>
+        <p>Пройдите тест и узнайте!</p>
+        <button onclick="startTest()">Начать тест</button>
+    </div>
+
+    <div id="test" class="hidden">
+        <form id="quizForm">
+            <div class="question">
+                <p>1. Как часто вы чувствуете тревогу, если долго не проверяете телефон?</p>
+                <label><input type="radio" name="q1" value="3"> Часто</label>
+                <label><input type="radio" name="q1" value="2"> Иногда</label>
+                <label><input type="radio" name="q1" value="1"> Редко</label>
+            </div>
+
+            <div class="question">
+                <p>2. Вы замечаете снижение концентрации из-за соцсетей?</p>
+                <label><input type="radio" name="q2" value="3"> Да</label>
+                <label><input type="radio" name="q2" value="2"> Иногда</label>
+                <label><input type="radio" name="q2" value="1"> Нет</label>
+            </div>
+
+            <button type="button" onclick="calculateResult()">Получить результат</button>
+        </form>
+    </div>
+
+    <div id="result" class="hidden">
+        <h2>Ваш результат:</h2>
+        <p id="resultText"></p>
+        <button onclick="restartTest()">Пройти снова</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
