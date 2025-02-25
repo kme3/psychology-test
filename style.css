@@ -15,20 +15,20 @@ body {
 
 /* Кнопки */
 button {
-    background: #ff6b6b;
+    background-color: #ff6f61; /* Красный */
     color: white;
+    padding: 12px 24px;
+    font-size: 18px;
     border: none;
-    padding: 15px 20px;
-    font-size: 16px;
-    border-radius: 10px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: all 0.3s ease-in-out;
 }
 
 button:hover {
-    background: #ff4757;
+    background-color: #ff3b2f;
+    transform: scale(1.1);
 }
-
 /* Вопросы */
 .question {
     background: white;
